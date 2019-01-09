@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uxV-Zt-XLK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--RSS Reader-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="RssFeedVC" id="BYZ-38-t0r" customClass="RssFeedVC" customModule="RSS_Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XTW-Or-qlf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="s8V-gm-PxB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myG-1k-aG4">
+                                            <rect key="frame" x="8" y="13" width="359" height="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" red="0.92156862750000001" green="0.23137254900000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hv0-p0-i1a">
+                                            <rect key="frame" x="161" y="60" width="53" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="ueU-xh-oe9"/>
+                                            </constraints>
+                                            <state key="normal" title="Refresh"/>
+                                            <connections>
+                                                <action selector="refresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvy-Wy-RoU"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="myG-1k-aG4" firstAttribute="leading" secondItem="s8V-gm-PxB" secondAttribute="leading" constant="8" id="G99-G8-t7y"/>
+                                        <constraint firstItem="Hv0-p0-i1a" firstAttribute="top" relation="lessThanOrEqual" secondItem="myG-1k-aG4" secondAttribute="bottom" constant="29" id="SIj-Dt-cPk"/>
+                                        <constraint firstAttribute="bottom" secondItem="Hv0-p0-i1a" secondAttribute="bottom" constant="9" id="gi4-uJ-HP9"/>
+                                        <constraint firstItem="Hv0-p0-i1a" firstAttribute="centerX" secondItem="myG-1k-aG4" secondAttribute="centerX" id="i9z-Vy-abM"/>
+                                        <constraint firstItem="myG-1k-aG4" firstAttribute="centerX" secondItem="s8V-gm-PxB" secondAttribute="centerX" id="xwv-Qy-Xwc"/>
+                                        <constraint firstItem="myG-1k-aG4" firstAttribute="top" secondItem="s8V-gm-PxB" secondAttribute="top" constant="13" id="zn3-0y-2J6"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedTableViewCell" rowHeight="70" id="yf2-e5-MDi" customClass="FeedTableViewCell" customModule="RSS_Reader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="127" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yf2-e5-MDi" id="PJ5-1V-5Wq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HP-9E-bdn">
+                                                    <rect key="frame" x="15" y="24" width="345" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6HP-9E-bdn" firstAttribute="centerY" secondItem="PJ5-1V-5Wq" secondAttribute="centerY" id="2Bj-3L-4bI"/>
+                                                <constraint firstItem="6HP-9E-bdn" firstAttribute="top" secondItem="PJ5-1V-5Wq" secondAttribute="topMargin" constant="13" id="AZR-uK-INs"/>
+                                                <constraint firstItem="6HP-9E-bdn" firstAttribute="leading" secondItem="PJ5-1V-5Wq" secondAttribute="leadingMargin" id="Aan-rz-XAS"/>
+                                                <constraint firstItem="6HP-9E-bdn" firstAttribute="centerX" secondItem="PJ5-1V-5Wq" secondAttribute="centerX" id="MB3-sE-3au"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLab" destination="6HP-9E-bdn" id="ZQb-RX-ToR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XTW-Or-qlf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1KE-fD-bTT"/>
+                            <constraint firstItem="XTW-Or-qlf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T83-et-Jip"/>
+                            <constraint firstItem="XTW-Or-qlf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aFH-tw-02W"/>
+                            <constraint firstAttribute="trailing" secondItem="XTW-Or-qlf" secondAttribute="trailing" id="mDJ-BP-5gx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="RSS Reader" id="6N5-CM-AAo"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="myG-1k-aG4" id="aC3-St-2Zu"/>
+                        <outlet property="headerView" destination="s8V-gm-PxB" id="Rc3-Au-grg"/>
+                        <outlet property="tableView" destination="XTW-Or-qlf" id="dV9-iU-jDX"/>
+                        <segue destination="kDm-oc-m1v" kind="show" id="utI-To-Zwz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="133.5832083958021"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="gSl-Vg-5wO">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="kDm-oc-m1v" customClass="WebViewController" customModule="RSS_Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8CB-bA-Cj2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jfE-0d-rOK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="322-Uv-pBa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pdv-e7-zc1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uxV-Zt-XLK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ipX-9p-ZCW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xWE-Tq-AcX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Sz-H0-A36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
